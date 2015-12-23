@@ -1,4 +1,4 @@
 # Are YOU the Ninja?
 ####################
-## _comming soon_
+## _coming soon_
 http://areyouthe.ninja
