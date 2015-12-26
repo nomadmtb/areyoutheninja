@@ -38,8 +38,8 @@ class ImgurAPI:
 
       res = requests.get(channel, headers=header)
       json_str = res.text
-      data = json.loads(json_str)
+      imgur_data = json.loads(json_str)
 
-      image_url = data["data"][random.randint(0, (len(data["data"]) - 1))]["link"]
+      image_url = imgur_data["data"][random.randint(0, (len(imgur_data["data"]) - 1))]["link"]
 
-      print("Url: {0}".format(image_url))
+      return image_url
