@@ -1,4 +1,6 @@
 import requests
+import json
+import random
 
 class ImgurAPI:
 
@@ -34,5 +36,10 @@ class ImgurAPI:
             "Authorization": "Client-ID {0}".format(self.__clientid)
       }
 
-      json_str = requests.get(channel, headers=header)
-      print(json_str.text)
+      res = requests.get(channel, headers=header)
+      json_str = res.text
+      data = json.loads(json_str)
+
+      image_url = data["data"][random.randint(0, (len(data["data"]) - 1))]["link"]
+
+      print("Url: {0}".format(image_url))
