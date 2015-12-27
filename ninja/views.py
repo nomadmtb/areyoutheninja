@@ -32,7 +32,7 @@ def isninja(request):
    elif (chance > 75 and chance <= 100):
       index = 2
 
-   print("Selected Index is: {0} w/ chance og {1}".format(index, chance))
+   print("Selected Index is: {0} with a chance of {1}".format(index, chance))
 
    if (index is 1):
       res["is_ninja"] = True
