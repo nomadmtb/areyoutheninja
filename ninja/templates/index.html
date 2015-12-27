@@ -2,6 +2,7 @@
 <html lang="en">
    <head>
       <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
       <script src="/static/js/ninja.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,23 +13,14 @@
 
    <body>
 
-      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#results">Open Modal</button>
+      <div id="wrapper">
 
-      <div id="results" class="modal fade" role="dialog">
-         <div class="modal-dialog">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Modal Header</h4>
-               </div>
-               <div class="modal-body">
-                  <p>Some text goes here</p>
-               </div>
-               <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-               </div>
-            </div>
+         <div id="reveal_wrapper">
+            <div id="reveal_top"></div>
+            <div id="reveal_content"></div>
+            <div id="reveal_bottom"></div>
          </div>
+
       </div>
 
    </body>
