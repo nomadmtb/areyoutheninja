@@ -1,6 +1,7 @@
 import requests
 import json
 import random
+from django.conf import settings
 
 class ImgurAPI:
 
@@ -10,7 +11,7 @@ class ImgurAPI:
 
       # Try to open the file in read-mode
       try:
-         token_file = open("TOKENS.txt", "r")
+         token_file = open("{0}/ninja/lib/TOKENS.txt".format(settings.BASE_DIR), "r")
       except:
          pass
 
