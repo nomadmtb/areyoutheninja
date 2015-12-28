@@ -5,13 +5,13 @@ var reveal_state = 'closed';
 function toggleReveal() {
    console.log("Toggling reveal window");
    if (reveal_state == 'closed') {
-      $('#reveal_top').attr('id', 'reveal_top_small');
-      $('#reveal_bottom').attr('id', 'reveal_bottom_small');
+      $('#reveal_top').animate({height: "75px"});
+      $('#reveal_bottom').animate({height: "75px"});
       $('#reveal_content').toggle('clip');
       reveal_state = 'opened';
    }else{
-      $('#reveal_top_small').attr('id', 'reveal_top');
-      $('#reveal_bottom_small').attr('id', 'reveal_bottom');
+      $('#reveal_top').animate({height: "300px"});
+      $('#reveal_bottom').animate({height: "300px"});
       $('#reveal_content').toggle('clip');
       reveal_state = 'closed';
    }
