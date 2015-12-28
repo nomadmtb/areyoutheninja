@@ -19,15 +19,30 @@ body {
    height: 300px;
    width: 100%;
    background-color: white;
-   border-bottom: 1px solid #737373;
+}
+
+#reveal_top_small {
+   height: 75px;
+   width: 100%;
+   background-color: white;
 }
 
 #reveal_content {
+   width: 100%;
+   height: 450px;
+   background-color: white;
+   box-shadow: inset 0 -20px 20px -20px #4d4d4d,
+      inset 0 20px 20px -20px #4d4d4d;
 }
 
 #reveal_bottom {
    height: 300px;
    width: 100%;
    background-color: white;
-   border-top: 1px solid #737373;
+}
+
+#reveal_bottom_small {
+   height: 75px;
+   width: 100%;
+   background-color: white;
 }
