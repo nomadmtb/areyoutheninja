@@ -12,6 +12,7 @@
    </head>
 
    <body>
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
       <div id="wrapper">
 
@@ -22,6 +23,25 @@
          </div>
 
       </div>
+
+      <!-- Modal -->
+      <div id="myModal" class="modal fade" role="dialog">
+         <div class="modal-dialog modal-sm">
+
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h4 class="modal-title">Loading...</h4>
+               </div>
+               <div class="modal-body">
+                  <video autoplay="" loop="" muted="" height="270">
+                     <source type="video/webm" src="http://127.0.0.1:8000/static/img/loading.webm">
+                  </video>
+               </div>
+            </div>
+
+         </div>
+      </div>
+      <!-- Modal -->
 
    </body>
 </html>
