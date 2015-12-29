@@ -4,7 +4,7 @@ var ninja_data = null;
 
 var data_template = `
 <div id="result">
-<h2>{{ is_ninja }}</h2>
+<h2 id="title_{{ is_ninja }}">{{ is_ninja }}</h2>
 <p>{{ message }}</p>
 <img src="{{ image }}">
 </div>
@@ -48,13 +48,16 @@ function applyData(data) {
    console.log("Applying data to the view");
 
    var dest = $("#reveal_content");
-   var formatted_data = data_template.replace("{{ is_ninja }}", data["is_ninja"]);
-   formatted_data = formatted_data.replace("{{ message }}", data["message"]);
-   formatted_data = formatted_data.replace("{{ image }}", data["image"]);
+   var formatted_data = data_template.replace(/{{ is_ninja }}/g, data["is_ninja"]);
+   formatted_data = formatted_data.replace(/{{ message }}/g, data["message"]);
+   formatted_data = formatted_data.replace(/{{ image }}/g, data["image"]);
 
    console.log(formatted_data);
 
    $("#reveal_content").html(formatted_data);
+
+   // Disable the button in the view.
+   $("#test_btn").attr('disabled', 'true');
 
    // Wait for the data to load before showing results
    var time = setTimeout(function() {

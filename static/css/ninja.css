@@ -53,3 +53,19 @@ body {
    margin: 0 auto;
    display: block;
 }
+
+#title_false {
+   display: block;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+
+#title_true {
+   display: block;
+   width: 100%;
+   background-color: green;
+   color: white;
+   text-align: center;
+}
