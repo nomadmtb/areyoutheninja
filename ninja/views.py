@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from lib.imgur import ImgurAPI
+from models import NinjaResult
 import random
 
 sub_reddits = [
@@ -54,5 +55,13 @@ def isninja(request):
       res["status"] = False
 
    res["status"] = True
+
+   # Save a copy to the DB
+   ip = request.META['REMOTE_ADDR']
+   img = res["image"]
+   mes = res["message"]
+
+   db_result = NinjaResult(ip_address=ip, image=img, message=mes)
+   db_result.save()
 
    return JsonResponse(res, content_type="application/json")
