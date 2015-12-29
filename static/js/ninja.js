@@ -4,9 +4,9 @@ var ninja_data = null;
 
 var data_template = `
 <div id="result">
-<h2 id="title_{{ is_ninja }}">{{ is_ninja }}</h2>
-<p>{{ message }}</p>
+<h2 id="title_{{ is_ninja }}">{{ is_ninja_title }}</h2>
 <img src="{{ image }}">
+<p>{{ message }}</p>
 </div>
 `;
 
@@ -49,6 +49,7 @@ function applyData(data) {
 
    var dest = $("#reveal_content");
    var formatted_data = data_template.replace(/{{ is_ninja }}/g, data["is_ninja"]);
+   formatted_data = formatted_data.replace(/{{ is_ninja_title }}/g, data["is_ninja"] ? "You are a ninja" : "You are not a ninja");
    formatted_data = formatted_data.replace(/{{ message }}/g, data["message"]);
    formatted_data = formatted_data.replace(/{{ image }}/g, data["image"]);
 

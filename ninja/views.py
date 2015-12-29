@@ -40,11 +40,11 @@ def isninja(request):
       res["is_ninja"] = False
 
    if (index is 0):
-      res["message"] = "Sorry looks like you are a cat. No ninja here."
+      res["message"] = "Welp, looks like you are a cat. Not a ninja."
    elif (index is 1):
       res["message"] = "You ARE the ninja! Congrats!"
    elif (index is 2):
-      res["message"] = "Sorry you failed. You are not a ninja."
+      res["message"] = "Sorry but you failed. You are not a ninja."
 
    try:
       api = ImgurAPI()
