@@ -5,9 +5,10 @@ from models import NinjaResult
 import random
 
 sub_reddits = [
-      ("cat", "https://api.imgur.com/3/gallery/r/lolcats"),
       ("ninja", "https://api.imgur.com/3/gallery/r/ninja"),
+      ("cat", "https://api.imgur.com/3/gallery/r/lolcats"),
       ("fail", "https://api.imgur.com/3/gallery/r/fail"),
+      ("aww", "https://api.imgur.com/3/gallery/r/aww"),
 ]
 
 # Index view
@@ -26,26 +27,30 @@ def isninja(request):
    chance = random.randint(0,100)
    index = None
 
-   if (chance <= 25):
-      index = 1
-   elif (chance > 25 and chance <= 75):
+   if (chance <= 10):
       index = 0
-   elif (chance > 75 and chance <= 100):
+   elif (chance > 10 and chance <= 40):
+      index = 1
+   elif (chance > 40 and chance <= 70):
       index = 2
+   elif (chance > 70 and chance <= 100):
+      index = 3
 
    print("Selected Index is: {0} with a chance of {1}".format(index, chance))
 
-   if (index is 1):
+   if (index is 0):
       res["is_ninja"] = True
    else:
       res["is_ninja"] = False
 
    if (index is 0):
-      res["message"] = "Welp, looks like you are a cat. Not a ninja."
-   elif (index is 1):
       res["message"] = "You ARE the ninja! Congrats!"
+   elif (index is 1):
+      res["message"] = "Sorry. Cat's are not ninjas."
    elif (index is 2):
       res["message"] = "Sorry but you failed. You are not a ninja."
+   elif (index is 3):
+      res["message"] = "Awwwwww. Cute, but not a ninja."
 
    try:
       api = ImgurAPI()
