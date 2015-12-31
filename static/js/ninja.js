@@ -5,7 +5,7 @@ var ninja_data = null;
 var data_template = `
 <div id="result">
 <h2 id="title_{{ is_ninja }}">{{ is_ninja_title }}</h2>
-<img src="{{ image }}">
+<a href="{{ image }}" target="_blank"><img src="{{ image }}"></a>
 <p>{{ message }}</p>
 </div>
 `;
@@ -24,6 +24,22 @@ function toggleReveal() {
       $('#reveal_content').toggle('clip');
       reveal_state = 'closed';
    }
+
+   // Hide the title message
+   $('#result h2').hide();
+
+   // Hide the message
+   $('#result p').hide();
+
+   // Show the title message
+   var time = setTimeout(function() {
+      $('#result h2').slideToggle(750, "easeOutBounce");
+   }, 1500);
+
+   // Show the message
+   var time = setTimeout(function() {
+      $('#result p').slideToggle(1000, "easeOutBounce");
+   }, 2500);
 }
 
 // Click the test button
@@ -66,7 +82,7 @@ function applyData(data) {
       $('#myModal').modal('hide');
       // Toggle the content
       toggleReveal();
-   }, 3000);
+   }, 2500);
 }
 
 // Document is ready

@@ -1,14 +1,15 @@
 body {
    background-color: #d9d9d9;
+   background-image: url("../img/wood_pattern.png");
 }
 
 #wrapper {
-   width: 90%;
-   max-width: 900px;
+   width: 100%;
+   /*max-width: 900px;*/
    margin: 0px auto;
    padding: 0px;
    min-height: 100px;
-   background-image: url("../img/wood_pattern.png");
+   /*background-image: url("../img/wood_pattern.png");*/
 }
 
 #reveal_wrapper {
@@ -19,21 +20,21 @@ body {
    height: 300px;
    width: 100%;
    padding-top: 15px;
-   background-image: url("../img/wood_pattern.png");
+   /*background-image: url("../img/wood_pattern.png");*/
 }
 
 #reveal_content {
    width: 100%;
    height: 450px;
-   background-image: url("../img/vertical_cloth.png");
-   box-shadow: inset 0 -20px 20px -20px black,
-      inset 0 20px 20px -20px black;
+   /*background-image: url("../img/vertical_cloth.png");*/
+   /*box-shadow: inset 0 -20px 20px -20px black,
+      inset 0 20px 20px -20px black;*/
 }
 
 #reveal_bottom {
    height: 300px;
    width: 100%;
-   background-image: url("../img/wood_pattern.png");
+   /*background-image: url("../img/wood_pattern.png");*/
 
 }
 
@@ -48,7 +49,7 @@ body {
    height: 100%;
 }
 
-#result img {
+#result a img {
    max-height: 80%;
    max-width: 80%;
    margin: 0 auto;
@@ -60,6 +61,7 @@ body {
 #result p {
    text-align: center;
    color: white;
+   text-shadow: 1px 1px #737373;
 }
 
 #title_false {
@@ -70,7 +72,7 @@ body {
    text-align: center;
    margin: 0px;
    padding: 0px;
-   box-shadow: inset 0 20px 20px -20px black;
+   box-shadow: inset 0 20px 20px -20px #404040;
 }
 
 #title_true {
@@ -81,7 +83,7 @@ body {
    text-align: center;
    margin: 0px;
    padding: 0px;
-   box-shadow: inset 0 20px 20px -20px black;
+   box-shadow: inset 0 20px 20px -20px #404040;
 }
 
 .modal-header {
