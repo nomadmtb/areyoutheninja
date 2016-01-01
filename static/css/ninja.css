@@ -1,3 +1,17 @@
+/* Message styling */
+#messages {
+   background-color: blue;
+   padding-top: 10px;
+   padding-bottom: 10px;
+}
+
+#messages p {
+   margin: 0px;
+   padding: 0px;
+   width: 100%;
+   text-align: center;
+}
+
 body {
    background-color: #d9d9d9;
    background-image: url("../img/wood_pattern.png");

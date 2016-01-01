@@ -4,8 +4,12 @@
 http://areyouthe.ninja
 
 
-## NOTES
+## TO-DO
 ########
+1. Refactor randomization of choices into a class. (oops)
+2. Refactor views etc. (wip)
+3. Create view for reporting results.
+4. Route using the uuid for each ninja-test. (sharing, FB etc)
 
 ### Data Sources
 1. https://api.imgur.com/3/gallery/r/ninja

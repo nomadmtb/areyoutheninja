@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+      <script src="/static/js/ninja.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" type="text/css" href="/static/css/ninja.css">
+      <title>AYTN?</title>
+   </head>
+
+   <body>
+
+      <div id="wrapper">
+
+         <div id="reveal_wrapper">
+            <div id="reveal_top">
+               <button type="button" id="test_btn" class="btn btn-info btn-lg">Well are you?</button>
+            </div>
+            <div id="reveal_content"></div>
+            <div id="reveal_bottom"></div>
+         </div>
+
+      </div>
+
+      <!-- Modal -->
+      <div id="myModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+         <div class="modal-dialog modal-sm" style="width: 300px;margin: 0 auto;">
+
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h4 class="modal-title">Checking Ninja</h4>
+               </div>
+               <div class="modal-body">
+                  <video autoplay="" loop="" muted="" height="270">
+                     <source type="video/webm" src="http://127.0.0.1:8000/static/img/loading.webm">
+                  </video>
+               </div>
+            </div>
+
+         </div>
+      </div>
+      <!-- Modal -->
+
+   </body>
+</html>

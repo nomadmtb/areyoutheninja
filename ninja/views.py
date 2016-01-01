@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.contrib import messages
 from lib.imgur import ImgurAPI
 from models import NinjaResult
 import random
