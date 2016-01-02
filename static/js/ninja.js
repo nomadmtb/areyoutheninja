@@ -81,13 +81,35 @@ function applyData(data) {
       // Turn off modal
       $('#myModal').modal('hide');
       // Toggle the content
-      toggleReveal();
    }, 2500);
+}
+
+// Function that will toggle the initial message if it exists
+function checkInitialMessage() {
+
+   if ($(".notice").length) {
+      console.log("Initial message detected");
+
+      // Hide message immediately
+      $("#messages").hide();
+
+      // Slide toggle the message
+      $('#messages').slideToggle("slow", function() {
+         var time = setTimeout(function() {
+            $("#messages").slideToggle("slow", function() {
+               $(".notice").remove();
+            });
+         }, 3500);
+      });
+   }else{
+      console.log("No initial message(s)");
+   }
 }
 
 // Document is ready
 $(function() {
    console.log("Ready");
+   checkInitialMessage();
    $("#reveal_content").toggle();
    $("#test_btn").click(testNinja);
 });

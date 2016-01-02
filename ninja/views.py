@@ -15,26 +15,43 @@ sub_reddits = [
 
 # Index view
 def index(request):
+
+   # Test message
+   messages.add_message(request, messages.WARNING, "Welcome testing testing");
+
    return render(request, 'index.html', {})
 
 # Route will respond with the image/subreddit information
 def isninja(request):
+
+   # Get all source objects out of the database
    sources = ResultSource.objects.all()
+
+   # Generate a random index into the sources
    index = random.randint(0,(len(sources)-1))
+
+   # Select the correct source
    selected_source = sources[index]
 
+   # Call the get_data method that will interact with the api
    data = selected_source.get_data()
 
+   # Track the result
    result = NinjaResult(
          is_ninja=data["is_ninja"],
          image=data["image_url"],
          ip_address=request.META['REMOTE_ADDR'],
          message=data["result_message"],
-         source_api=data["source_api"]
+         source_api=data["source_api"],
    )
 
+   # Save the result
    result.save()
 
+   # Get the UUID
+   data["uuid"] = result.uuid
+
+   # Return the response to the user
    if data is not False:
       return JsonResponse(data, content_type="application/json")
    else:

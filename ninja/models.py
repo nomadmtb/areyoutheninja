@@ -46,6 +46,7 @@ class ResultSource(models.Model):
       data["source_api"] = self.source_api
       data["result_message"] = self.result_message
       data["is_ninja"] = self.is_ninja
+      data["uuid"] = None
 
       return data
 
