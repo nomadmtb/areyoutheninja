@@ -84,6 +84,17 @@ function applyData(data) {
    }, 2500);
 }
 
+// Function that will dynamically add a message to the view
+function addMessage(message_txt) {
+
+   // Set the contents
+   $('#messages').html("<p class='notice'>" + message_txt + "</p>");
+
+   // Toggle the message
+   toggleMessage();
+
+}
+
 // Function that will toggle the initial message if it exists
 function checkInitialMessage() {
 
@@ -93,17 +104,25 @@ function checkInitialMessage() {
       // Hide message immediately
       $("#messages").hide();
 
-      // Slide toggle the message
-      $('#messages').slideToggle("slow", function() {
-         var time = setTimeout(function() {
-            $("#messages").slideToggle("slow", function() {
-               $(".notice").remove();
-            });
-         }, 3500);
-      });
+      toggleMessage();
+
    }else{
       console.log("No initial message(s)");
    }
+}
+
+// Function that will show, hide, and delete the message
+function toggleMessage() {
+
+   $('#messages').hide();
+
+   $('#messages').slideToggle("slow", function() {
+      var time = setTimeout(function() {
+         $("#messages").slideToggle("slow", function() {
+            $(".notice").remove();
+         });
+      }, 3500);
+   });
 }
 
 // Document is ready
