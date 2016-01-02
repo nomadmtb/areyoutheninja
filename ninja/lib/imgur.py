@@ -22,7 +22,7 @@ class ImgurAPI:
          pass
 
       # Print the client-id as a sanity check
-      # print("ClientID = {0}".format(self.__clientid))
+      print("ClientID = {0}".format(self.__clientid))
 
       # Close the file
       token_file.close()

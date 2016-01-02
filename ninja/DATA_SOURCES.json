@@ -1,0 +1,24 @@
+{
+   "data":[
+      {
+         "is_ninja": true,
+         "source_api": "https://api.imgur.com/3/gallery/r/ninja",
+         "result_message": "You are the ninja! Congratulations!"
+      },
+      {
+         "is_ninja": false,
+         "source_api": "https://api.imgur.com/3/gallery/r/lolcats",
+         "result_message": "Sorry, lolcats are not ninjas."
+      },
+      {
+         "is_ninja": false,
+         "source_api": "https://api.imgur.com/3/gallery/r/fail",
+         "result_message": "Fail. You are not a ninja."
+      },
+      {
+         "is_ninja": false,
+         "source_api": "https://api.imgur.com/3/gallery/r/aww",
+         "result_message": "Aww. Cute, but not a ninja."
+      }
+   ]
+}
