@@ -2,18 +2,26 @@
 var ninja_data = null;
 var result_template = `
 <div class="modal-content">
-   <div class="modal-header">
-      <h4 class="modal-title">{{ result_message }}</h4>
-   </div>
-   <div class="modal-body">
-      <a href="{{ image_url }}"><img id="result_image" src="{{ image_url }}"></a>
-   </div>
+<div class="modal-header">
+<h4 class="modal-title">{{ result_message }}</h4>
+</div>
+<div class="modal-body" id="result_body">
+<a href="{{ image_url }}" target="_blank"><img id="result_image" src="{{ image_url }}"></a>
+</div>
 </div>
 `;
 
 // Click the test button
 function testNinja() {
    console.log("Testing for ninja");
+
+   // Set up listener to change css for result modal
+   $('#resultsModal').on('show', function () {
+
+      $(this).find('.modal-body').css({width:'auto',
+         height:'auto', 
+        'max-height':'100%'});
+  });
 
    // Turn on the modal
    $('#myModal').modal('show');
@@ -48,7 +56,8 @@ function applyData(data) {
       // Turn off modal
       $('#myModal').modal('hide');
       // Toggle the content
-   }, 2500);
+      $('#resultsModal').modal();
+   }, 1500);
 }
 
 // Function that will dynamically add a message to the view
@@ -71,7 +80,9 @@ function checkInitialMessage() {
       // Hide message immediately
       $("#messages").hide();
 
-      toggleMessage();
+      var time = setTimeout(function() {
+         toggleMessage();
+      }, 950);
 
    }else{
       console.log("No initial message(s)");

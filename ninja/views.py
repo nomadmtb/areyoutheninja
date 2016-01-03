@@ -17,7 +17,7 @@ sub_reddits = [
 def index(request):
 
    # Test message
-   messages.add_message(request, messages.WARNING, "Welcome testing testing");
+   messages.add_message(request, messages.WARNING, "Click the button to see if you are the ninja.");
 
    return render(request, 'index.html', {})
 

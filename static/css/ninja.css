@@ -19,6 +19,7 @@
 
 body {
    background-image: url("../img/wood_pattern.png");
+   overflow-y: auto;
 }
 
 #wrapper {
@@ -107,6 +108,12 @@ body {
 }
 
 #result_image {
-   height: auto;
-   max-width: 100%;
+   max-width: 570px;
+   margin: 0 auto;
+}
+
+#result_body {
+   max-height: 700px;
+   overflow-y: auto;
+   margin: 0 auto;
 }
