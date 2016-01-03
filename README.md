@@ -6,11 +6,11 @@ http://areyouthe.ninja
 
 ## TO-DO
 ########
-1. Refactor randomization of choices into a class. (oops)
-2. Refactor views etc. (wip)
-3. Create view for reporting results.
-4. Route using the uuid for each ninja-test. (sharing, FB etc)
-5. Model for the data sources. (doh)
+1. Refactor randomization of choices into a class. (DONE)
+2. Refactor views etc. (DONE)
+3. Create view for reporting results. (WIP)
+4. Route using the uuid for each ninja-test. (DONE)
+5. Model for the data sources. (DONE)
 
 ### Data Sources
 1. https://api.imgur.com/3/gallery/r/ninja
