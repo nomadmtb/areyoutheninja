@@ -1,46 +1,15 @@
 // Init variables here
-var reveal_state = 'closed';
 var ninja_data = null;
-
-var data_template = `
-<div id="result">
-<h2 id="title_{{ is_ninja }}">{{ is_ninja_title }}</h2>
-<a href="{{ image }}" target="_blank"><img src="{{ image }}"></a>
-<p>{{ message }}</p>
+var result_template = `
+<div class="modal-content">
+   <div class="modal-header">
+      <h4 class="modal-title">{{ result_message }}</h4>
+   </div>
+   <div class="modal-body">
+      <a href="{{ image_url }}"><img id="result_image" src="{{ image_url }}"></a>
+   </div>
 </div>
 `;
-
-// Function that will toggle the view reveal window
-function toggleReveal() {
-   console.log("Toggling reveal window");
-   if (reveal_state == 'closed') {
-      $('#reveal_top').animate({height: "75px"});
-      $('#reveal_bottom').animate({height: "75px"});
-      $('#reveal_content').toggle('clip');
-      reveal_state = 'opened';
-   }else{
-      $('#reveal_top').animate({height: "300px"});
-      $('#reveal_bottom').animate({height: "300px"});
-      $('#reveal_content').toggle('clip');
-      reveal_state = 'closed';
-   }
-
-   // Hide the title message
-   $('#result h2').hide();
-
-   // Hide the message
-   $('#result p').hide();
-
-   // Show the title message
-   var time = setTimeout(function() {
-      $('#result h2').slideToggle(750, "easeOutBounce");
-   }, 1500);
-
-   // Show the message
-   var time = setTimeout(function() {
-      $('#result p').slideToggle(1000, "easeOutBounce");
-   }, 2500);
-}
 
 // Click the test button
 function testNinja() {
@@ -63,15 +32,13 @@ function testNinja() {
 function applyData(data) {
    console.log("Applying data to the view");
 
-   var dest = $("#reveal_content");
-   var formatted_data = data_template.replace(/{{ is_ninja }}/g, data["is_ninja"]);
-   formatted_data = formatted_data.replace(/{{ is_ninja_title }}/g, data["is_ninja"] ? "You are a ninja" : "You are not a ninja");
-   formatted_data = formatted_data.replace(/{{ message }}/g, data["message"]);
-   formatted_data = formatted_data.replace(/{{ image }}/g, data["image"]);
+   var dest = $("#result_wrapper");
+   var formatted_data = result_template.replace(/{{ result_message }}/g, data["result_message"]);
+   formatted_data = formatted_data.replace(/{{ image_url }}/g, data["image_url"]);
 
    console.log(formatted_data);
 
-   $("#reveal_content").html(formatted_data);
+   dest.html(formatted_data);
 
    // Disable the button in the view.
    $("#test_btn").attr('disabled', 'true');

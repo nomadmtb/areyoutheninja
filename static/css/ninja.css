@@ -105,3 +105,8 @@ body {
 .modal-header {
    text-align: center;
 }
+
+#result_image {
+   height: auto;
+   max-width: 100%;
+}
