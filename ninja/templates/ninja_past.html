@@ -2,6 +2,9 @@
 
 
 {% block optional_headers %}
+<!-- Google -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<!-- Facebook -->
 <meta property="og:url"           content="http://areyouthe.ninja/ninja/{{ ninja_result.uuid }}" />
 <meta property="og:type"          content="website" />
 <meta property="og:title"         content="Are You The Ninja?" />
@@ -44,10 +47,17 @@
          <div class="modal-body" id="result_body">
             <a href="{{ ninja_result.image }}" target="_blank"><img id="result_image" src="{{ ninja_result.image }}"></a>
          </div>
-         <div class="modal-footer">
+         <div class="modal-footer" id="modalFooter">
             <h4>Share Your Results</h4>
-            <a href="/ninja/{{ ninja_result.uuid }}" target="_blank">Direct Link</a>
-            <div class="fb-share-button" data-href="http://areyouthe.ninja/ninja/{{ ninja_result.uuid }}" data-layout="button"></div>
+            <div id="share_buttons">
+               <a href="/ninja/{{ ninja_result.uuid }}" target="_blank">Direct Link</a>
+               <div id="facebook_wrapper">
+                  <div class="fb-share-button" data-href="http://areyouthe.ninja/ninja/{{ ninja_result.uuid }}" data-layout="button"></div>
+               </div>
+               <div id="google_wrapper">
+                  <div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://areyouthe.ninja/ninja/{{ ninja_result.uuid }}"></div>
+               </div>
+            </div>
          </div>
       </div>
    </div>

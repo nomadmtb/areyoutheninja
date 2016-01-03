@@ -17,9 +17,36 @@
    font-size: 16px;
 }
 
+#share_buttons {
+   height: 20px;
+   width: 350px;
+   float: left;
+}
+
+#share_buttons a {
+   float: left;
+}
+
+#facebook_wrapper {
+   width: 75px;
+   float: left;
+   display: inline-block;
+}
+
+#google_wrapper {
+   width: 75px;
+   float: left;
+   margin-left: 15px;
+   display: inline-block;
+}
+
 body {
    background-image: url("../img/wood_pattern.png");
    overflow-y: auto;
+}
+
+#modalFooter h4 {
+   text-align: left;
 }
 
 #wrapper {
