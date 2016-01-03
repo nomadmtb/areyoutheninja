@@ -17,10 +17,16 @@
    font-size: 16px;
 }
 
+#go_back {
+   width: 100px;
+   float: right;
+}
+
 #share_buttons {
    height: 20px;
-   width: 350px;
+   width: 280px;
    float: left;
+   margin-top: 8px;
 }
 
 #share_buttons a {
@@ -136,12 +142,23 @@ body {
 
 #result_image {
    max-width: 570px;
+   max-height: 470px;
    display: block;
    margin: 0 auto;
+   border-radius: 8px;
+   box-shadow: 0px 1px 3px 0.1px rgba(115,115,115,1);
 }
 
 #result_body {
    max-height: 700px;
    overflow-y: auto;
    margin: 0 auto;
+}
+
+.clear_float {
+   clear: both;
+}
+
+#myModal {
+   margin-top: 10px;
 }
