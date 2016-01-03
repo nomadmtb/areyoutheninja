@@ -10,7 +10,7 @@ var result_template = `
 </div>
 <div class="modal-footer">
 <h4>Share Your Results</h4>
-<a href="/ninja/{{ uuid }}" target="_blank">Direct Link</a>
+<a href="http://areyouthe.ninja/ninja/{{ uuid }}" target="_blank">Direct Link</a>
 </div>
 </div>
 `;
@@ -24,8 +24,8 @@ function testNinja() {
 
       $(this).find('.modal-body').css({width:'auto',
          height:'auto', 
-        'max-height':'100%'});
-  });
+         'max-height':'100%'});
+   });
 
    // Turn on the modal
    $('#myModal').modal('show');
@@ -35,38 +35,11 @@ function testNinja() {
       ninja_data = data;
       console.log(ninja_data);
 
-      // Apply the new data to the view
-      applyData(data);
+      // Redirect the user to the results page
+      var time = setTimeout(function() {
+         window.location = "/ninja/" + data["uuid"];
+      }, 1500);
    });
-}
-
-// Function to apply the data to the view after load
-function applyData(data) {
-   console.log("Applying data to the view");
-
-   var dest = $("#result_wrapper");
-   var formatted_data = result_template.replace(/{{ result_message }}/g, data["result_message"]);
-   formatted_data = formatted_data.replace(/{{ image_url }}/g, data["image_url"]);
-   formatted_data = formatted_data.replace(/{{ uuid }}/g, data["uuid"]);
-
-   console.log(formatted_data);
-
-   dest.html(formatted_data);
-
-   // Create the margin-left for the image if the width is < 570px
-   var img_width = $('#result_image').width();
-   console.log(img_width);
-
-   // Disable the button in the view.
-   $("#test_btn").attr('disabled', 'true');
-
-   // Wait for the data to load before showing results
-   var time = setTimeout(function() {
-      // Turn off modal
-      $('#myModal').modal('hide');
-      // Toggle the content
-      $('#resultsModal').modal();
-   }, 1500);
 }
 
 // Function that will dynamically add a message to the view
