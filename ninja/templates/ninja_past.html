@@ -1,0 +1,41 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<div id="wrapper">
+
+   <div id="messages">
+      {% if messages %}
+      {% for message in messages %}
+      <p class="notice">{{ message }}</p>
+      {% endfor %}
+      {% endif %}
+   </div>
+
+   <div id="reveal_wrapper">
+      <div id="reveal_top">
+         <button type="button" id="test_btn" class="btn btn-info btn-lg">Well are you?</button>
+      </div>
+      <div id="reveal_content"></div>
+      <div id="reveal_bottom"></div>
+   </div>
+
+</div>
+
+<div id="ninja_past"></div>
+
+<!-- Modal -->
+<div id="resultsModal" class="modal fade" role="dialog" data-backdrop="static">
+   <div class="modal-dialog modal-lg" id="result_wrapper" style="width: 600px;margin: 10px auto;">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title">{{ ninja_result.message }}</h4>
+         </div>
+         <div class="modal-body" id="result_body">
+            <a href="{{ ninja_result.image }}" target="_blank"><img id="result_image" src="{{ ninja_result.image }}"></a>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Modal -->
+
+{% endblock %}

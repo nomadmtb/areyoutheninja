@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
 
     url(r'^$', ninja_views.index, name="index"),
+    url(r'^ninja/(\w+)$', ninja_views.ninja_past, name="ninja_past"),
     url(r'^api/', include('ninja.urls')),
 
 # Only during DEV!

@@ -68,6 +68,8 @@ DATABASES = {
       }
 }
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 

@@ -109,6 +109,7 @@ body {
 
 #result_image {
    max-width: 570px;
+   display: block;
    margin: 0 auto;
 }
 

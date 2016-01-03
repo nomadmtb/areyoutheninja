@@ -1,10 +1,11 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
 from django.contrib import messages
 from lib.imgur import ImgurAPI
 from models import NinjaResult
 from models import ResultSource
 import random
+from django.core.exceptions import ObjectDoesNotExist
 
 sub_reddits = [
       ("ninja", "https://api.imgur.com/3/gallery/r/ninja"),
@@ -20,6 +21,24 @@ def index(request):
    messages.add_message(request, messages.WARNING, "Click the button to see if you are the ninja.");
 
    return render(request, 'index.html', {})
+
+def ninja_past(request, input_uuid):
+
+   result = None
+   page_vars = {}
+
+   try:
+      result = NinjaResult.objects.get(uuid=input_uuid)
+   except ObjectDoesNotExist:
+      print("UUID: {0} Doesn't Exist".format(input_uuid))
+      messages.add_message(request, messages.WARNING, "Sorry, that past ninja was not found")
+      return HttpResponseRedirect("/")
+
+   page_vars["ninja_result"] = result
+
+   return render(request, "ninja_past.html", page_vars)
+
+
 
 # Route will respond with the image/subreddit information
 def isninja(request):

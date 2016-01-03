@@ -48,6 +48,10 @@ function applyData(data) {
 
    dest.html(formatted_data);
 
+   // Create the margin-left for the image if the width is < 570px
+   var img_width = $('#result_image').width();
+   console.log(img_width);
+
    // Disable the button in the view.
    $("#test_btn").attr('disabled', 'true');
 
@@ -86,6 +90,7 @@ function checkInitialMessage() {
 
    }else{
       console.log("No initial message(s)");
+      $('#messages').hide();
    }
 }
 
@@ -99,14 +104,26 @@ function toggleMessage() {
          $("#messages").slideToggle("slow", function() {
             $(".notice").remove();
          });
-      }, 3500);
+      }, 4500);
    });
+}
+
+// Function that will handle all of the ninja_past stuff
+function ninjaPast() {
+   $("#resultsModal").modal();
+   $("#test_btn").attr('disabled', 'true');
 }
 
 // Document is ready
 $(function() {
    console.log("Ready");
    checkInitialMessage();
-   $("#reveal_content").toggle();
-   $("#test_btn").click(testNinja);
+
+   // We only want this to run if the "#ninja_past exists"
+   if ($("#ninja_past").length) {
+      ninjaPast();
+   }else{
+      // Else, enable the button
+      $("#test_btn").click(testNinja);
+   }
 });
