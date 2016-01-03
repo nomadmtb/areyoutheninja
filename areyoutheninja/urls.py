@@ -4,7 +4,7 @@ from ninja import views as ninja_views
 from django.conf import settings
 from django.conf.urls.static import static
 
-urlpatterns = patterns('',
+urlpatterns = [
     # Examples:
     # url(r'^$', 'areyoutheninja.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
@@ -15,4 +15,4 @@ urlpatterns = patterns('',
     url(r'^api/', include('ninja.urls')),
 
 # Only during DEV!
-) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
