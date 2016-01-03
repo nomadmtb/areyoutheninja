@@ -8,6 +8,10 @@ var result_template = `
 <div class="modal-body" id="result_body">
 <a href="{{ image_url }}" target="_blank"><img id="result_image" src="{{ image_url }}"></a>
 </div>
+<div class="modal-footer">
+<h4>Share Your Results</h4>
+<a href="/ninja/{{ uuid }}" target="_blank">Direct Link</a>
+</div>
 </div>
 `;
 
@@ -43,6 +47,7 @@ function applyData(data) {
    var dest = $("#result_wrapper");
    var formatted_data = result_template.replace(/{{ result_message }}/g, data["result_message"]);
    formatted_data = formatted_data.replace(/{{ image_url }}/g, data["image_url"]);
+   formatted_data = formatted_data.replace(/{{ uuid }}/g, data["uuid"]);
 
    console.log(formatted_data);
 
