@@ -1,19 +1,5 @@
 // Init variables here
 var ninja_data = null;
-var result_template = `
-<div class="modal-content">
-<div class="modal-header">
-<h4 class="modal-title">{{ result_message }}</h4>
-</div>
-<div class="modal-body" id="result_body">
-<a href="{{ image_url }}" target="_blank"><img id="result_image" src="{{ image_url }}"></a>
-</div>
-<div class="modal-footer">
-<h4>Share Your Results</h4>
-<a href="http://areyouthe.ninja/ninja/{{ uuid }}" target="_blank">Direct Link</a>
-</div>
-</div>
-`;
 
 // Click the test button
 function testNinja() {
