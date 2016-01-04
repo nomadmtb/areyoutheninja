@@ -72,6 +72,9 @@ body {
    padding-top: 15px;
    border-top: 1px solid #737373;
 }
+#reveal_top button {
+   width: 200px;
+}
 
 #reveal_content {
    width: 100%;
@@ -138,6 +141,28 @@ body {
 
 .modal-header {
    text-align: center;
+}
+
+.modal-body {
+   background-image: url("../img/debut_light.png");
+}
+
+.modal-footer {
+   background-image: url("../img/debut_light.png");
+   border-bottom-left-radius: 6px;
+   border-bottom-right-radius: 6px;
+}
+
+#headerTrue {
+   background-color: lightgreen;
+   border-top-left-radius: 6px;
+   border-top-right-radius: 6px;
+}
+
+#headerFalse {
+   background-color: orange;
+   border-top-left-radius: 6px;
+   border-top-right-radius: 6px;
 }
 
 #result_image {

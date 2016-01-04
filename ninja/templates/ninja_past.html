@@ -8,7 +8,7 @@
 <meta property="og:url"           content="http://areyouthe.ninja/ninja/{{ ninja_result.uuid }}" />
 <meta property="og:type"          content="website" />
 <meta property="og:title"         content="Are You The Ninja?" />
-<meta property="og:description"   content="Test yourself to see if you are the all-powerful ninja/" />
+<meta property="og:description"   content="Test yourself to see if you are the all-powerful ninja." />
 <meta property="og:image"         content="http://areyouthe.ninja/static/img/ninja10.png" />
 {% endblock %}
 
@@ -41,7 +41,7 @@
 <div id="resultsModal" class="modal fade" role="dialog" data-backdrop="static">
    <div class="modal-dialog modal-lg" id="result_wrapper" style="width: 600px;margin: 10px auto;">
       <div class="modal-content">
-         <div class="modal-header">
+         <div class="modal-header" id="header{{ ninja_result.is_ninja }}">
             <h4 class="modal-title">{{ ninja_result.message }}</h4>
          </div>
          <div class="modal-body" id="result_body">
