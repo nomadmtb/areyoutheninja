@@ -19,6 +19,26 @@
          "is_ninja": false,
          "source_api": "https://api.imgur.com/3/gallery/r/aww",
          "result_message": "Aww. Cute, but not a ninja."
+      },
+      {
+         "is_ninja": false,
+         "source_api": "https://api.imgur.com/3/gallery/r/demotivational",
+         "result_message": "Well that's not very motivational. Not a ninja."
+      },
+      {
+         "is_ninja": false,
+         "source_api": "https://api.imgur.com/3/gallery/r/fuckanimals",
+         "result_message": "You both are not ninjas."
+      },
+      {
+         "is_ninja": false,
+         "source_api": "https://api.imgur.com/3/gallery/r/christianbalegifs",
+         "result_message": "Christian Bale... Cool, but not a ninja."
+      },
+      {
+         "is_ninja": false,
+         "source_api": "https://api.imgur.com/3/gallery/r/kidsonleashes",
+         "result_message": "Kids on leashes are not ninjas."
       }
    ]
 }
